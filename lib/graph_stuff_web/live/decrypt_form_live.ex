@@ -3,7 +3,7 @@ defmodule GraphStuffWeb.DecryptFormLive do
 
   def render(assigns) do
     ~H"""
-    <.simple_form id="decrypt_form" for={@form} phx-change="validate" phx-submit="save">
+    <.simple_form id="decrypt_form" for={@form} phx-change="validate" phx-submit="submit">
       <.input field={@form[:jwe_input]} type="textarea" label="Input JWE to decrypt" />
       <:actions>
         <.button>Submit</.button>
@@ -17,9 +17,9 @@ defmodule GraphStuffWeb.DecryptFormLive do
     {:ok, assign(socket, :form, to_form(form_fields))}
   end
 
-  def handle_event("save", _unsigned_params, socket) do
+  def handle_event("submit", %{"jwe_input" => input}, socket) do
     form_fields = %{"jwe_input" => "Eyyo schreib was gscheites rein"}
-    # IO.inspect(unsigned_params, label: "TEST DEBUG")
+    IO.inspect(input, label: "Input of textfield")
     {:noreply, assign(socket, :form, to_form(form_fields))}
   end
 
