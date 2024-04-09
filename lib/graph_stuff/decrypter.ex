@@ -5,7 +5,7 @@ defmodule GraphStuff.Decrypter do
     |> :crypto.hash(encryption_key)
     |> JOSE.JWK.from_oct()
     |> JOSE.JWE.block_decrypt(auth_data)
-    |> then(fn {decrypted, _} -> Jason.decode!(decrypted) end)
+    |> then(fn {decrypted, _} -> Jason.Formatter.pretty_print(decrypted) end)
     |> IO.inspect()
   end
 end
