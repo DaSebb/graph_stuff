@@ -84,4 +84,15 @@ defmodule GraphStuffWeb.Router do
       live "/users/confirm", UserConfirmationInstructionsLive, :new
     end
   end
+
+  ### GraphQL testing
+
+  scope "/" do
+    pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+        schema: GraphStuffWeb.Schema,
+        interface: :simple,
+        context: %{pubsub: GraphStuffWeb.Endpoint}
+  end
 end

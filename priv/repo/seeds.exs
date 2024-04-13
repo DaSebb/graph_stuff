@@ -9,3 +9,8 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias GraphStuff.Animals.Animal
+alias GraphStuff.Repo
+
+%Animal{name: "cat", number_of_legs: 4, alive: false} |> Repo.insert!()
+%Animal{name: "dog", number_of_legs: 3} |> Repo.insert!()
