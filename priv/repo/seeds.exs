@@ -14,3 +14,4 @@ alias GraphStuff.Repo
 
 %Animal{name: "cat", number_of_legs: 4, alive: false} |> Repo.insert!()
 %Animal{name: "dog", number_of_legs: 3} |> Repo.insert!()
+%Animal{name: "bird", number_of_legs: 2} |> Repo.insert!()
