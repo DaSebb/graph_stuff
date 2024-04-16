@@ -1,5 +1,4 @@
 defmodule GraphStuff.Decrypter do
-
   def decrypt_jwe(auth_data, encryption_key) do
     :sha256
     |> :crypto.hash(encryption_key)

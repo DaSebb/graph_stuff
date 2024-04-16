@@ -9,12 +9,10 @@ defmodule GraphStuffWeb.DecryptFormLive do
       <.input field={@form[:enc_key_input]} type="textarea" label="Input Encryption Key" />
       <.input field={@form[:output]} type="textarea" label="Decrypted JWE" disabled />
 
-
       <:actions>
         <.button>Submit</.button>
       </:actions>
     </.simple_form>
-
     """
   end
 
