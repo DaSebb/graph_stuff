@@ -94,5 +94,8 @@ defmodule GraphStuffWeb.Router do
         schema: GraphStuffWeb.Schema,
         interface: :simple,
         context: %{pubsub: GraphStuffWeb.Endpoint}
+
+    forward "/graph", Absinthe.Plug,
+        schema: GraphStuffWeb.Schema
   end
 end

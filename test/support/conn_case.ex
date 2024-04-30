@@ -28,6 +28,7 @@ defmodule GraphStuffWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import GraphStuffWeb.ConnCase
+      import GraphStuff.Factory
     end
   end
 

@@ -11,7 +11,7 @@ defmodule GraphStuffWeb.Schema do
 
   query do
     @desc "Get all animals"
-    field :all_anmials, non_null(list_of(non_null(:animal))) do
+    field :all_animals, non_null(list_of(non_null(:animal))) do
       resolve(&AnimalResolver.all_animals/3)
     end
   end
